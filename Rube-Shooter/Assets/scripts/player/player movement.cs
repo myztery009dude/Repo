@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         forwardInputValue = Input.GetAxisRaw("Vertical");
         strafeInputValue = Input.GetAxisRaw("Horizontal");
-        movementSpeed();
+        Movement();
     }
 
     void Movement()
