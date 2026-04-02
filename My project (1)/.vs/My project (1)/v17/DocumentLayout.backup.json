@@ -1,0 +1,136 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\assets\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\assets\\targethealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\targethealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|c:\\users\\s252221\\documents\\github\\repo\\my project (1)\\assets\\fireprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\fireprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|c:\\users\\s252221\\documents\\github\\repo\\my project (1)\\assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\assets\\scripts\\player\\player movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\assets\\highscores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\highscores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\assets\\rube\\spin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\rube\\spin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FireProjectile.cs",
+              "DocumentMoniker": "C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\Assets\\FireProjectile.cs",
+              "RelativeDocumentMoniker": "Assets\\FireProjectile.cs",
+              "ToolTip": "C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\Assets\\FireProjectile.cs",
+              "RelativeToolTip": "Assets\\FireProjectile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAB3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T09:07:17.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HighScores.cs",
+              "DocumentMoniker": "C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\Assets\\HighScores.cs",
+              "RelativeDocumentMoniker": "Assets\\HighScores.cs",
+              "ToolTip": "C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\Assets\\HighScores.cs",
+              "RelativeToolTip": "Assets\\HighScores.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T07:20:17.422Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\Assets\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\GameManager.cs",
+              "ToolTip": "C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\Assets\\GameManager.cs",
+              "RelativeToolTip": "Assets\\GameManager.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAtwHAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T07:21:02.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TargetHealth.cs",
+              "DocumentMoniker": "C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\Assets\\TargetHealth.cs",
+              "RelativeDocumentMoniker": "Assets\\TargetHealth.cs",
+              "ToolTip": "C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\Assets\\TargetHealth.cs",
+              "RelativeToolTip": "Assets\\TargetHealth.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T08:13:58.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Projectile.cs",
+              "DocumentMoniker": "C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\Assets\\Projectile.cs",
+              "RelativeDocumentMoniker": "Assets\\Projectile.cs",
+              "ToolTip": "C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\Assets\\Projectile.cs",
+              "RelativeToolTip": "Assets\\Projectile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T08:15:17.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Spin.cs",
+              "DocumentMoniker": "C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\Assets\\Rube\\Spin.cs",
+              "RelativeDocumentMoniker": "Assets\\Rube\\Spin.cs",
+              "ToolTip": "C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\Assets\\Rube\\Spin.cs",
+              "RelativeToolTip": "Assets\\Rube\\Spin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T07:55:56.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "player movement.cs",
+              "DocumentMoniker": "C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\Assets\\scripts\\player\\player movement.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\player\\player movement.cs",
+              "ToolTip": "C:\\Users\\s252221\\Documents\\GitHub\\Repo\\My project (1)\\Assets\\scripts\\player\\player movement.cs",
+              "RelativeToolTip": "Assets\\scripts\\player\\player movement.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAIwCYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T09:18:55.537Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
