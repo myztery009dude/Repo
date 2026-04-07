@@ -6,6 +6,8 @@ using UnityEngine;
 public class HighScores : MonoBehaviour
 {
     public int[] scores = new int[10];
+    public OperatingSystemFamily currentOS;
+    public string directoryDivider;
 
     string currentDirectory;
 
@@ -13,6 +15,18 @@ public class HighScores : MonoBehaviour
 
     void Start()
     {
+        currentOS = SystemInfo.operatingSystemFamily;
+        Debug.Log("current OS: " + currentOS);
+
+        switch (currentOS) {
+            case OperatingSystemFamily.Windows:
+                directoryDivider = "\\";
+                break;
+            default:
+                directoryDivider = "/";
+                break;
+        }
+
         currentDirectory = Application.dataPath;
         Debug.Log("Our current directory is: " + currentDirectory);
 
@@ -25,7 +39,7 @@ public class HighScores : MonoBehaviour
 
     public void LoadScoresFromFile()
     {
-        bool fileExists = File.Exists(currentDirectory + "\\" + scoreFileName);
+        bool fileExists = File.Exists(currentDirectory + "/" + scoreFileName);
         if (fileExists == true)
         {
             Debug.Log("Found high score file " + scoreFileName);
@@ -33,12 +47,15 @@ public class HighScores : MonoBehaviour
         else
         {
             Debug.Log("The file " + scoreFileName + " does not exist. No scores will be loaded.", this);
+            Debug.Log("trying to access file at: " + currentDirectory + "/" + scoreFileName);
             return;
         }
 
+        
+
         scores = new int[scores.Length];
 
-        StreamReader fileReader = new StreamReader(currentDirectory + "\\" + scoreFileName);
+        StreamReader fileReader = new StreamReader(currentDirectory + "/" + scoreFileName);
         int scoreCount = 0;
 
         while (fileReader.Peek() != 0 && scoreCount < scores.Length)
@@ -65,7 +82,7 @@ public class HighScores : MonoBehaviour
 
     public void SaveScoresToFile()
     {
-        StreamWriter fileWriter = new StreamWriter(currentDirectory + "\\" + scoreFileName);
+        StreamWriter fileWriter = new StreamWriter(currentDirectory + "/" + scoreFileName);
 
         for (int i = 0; i < scores.Length; i++)
         {

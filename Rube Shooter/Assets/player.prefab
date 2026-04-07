@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2048002272474997691, guid: e65884d531c58aa42881e730116729bf, type: 3}
   spawntransform: {fileID: 7229624089583418481}
-  force: 500
+  force: 3000
 --- !u!4 &6861474874150916360 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6f01745d080cf1445b957c1c715d84ba, type: 3}
