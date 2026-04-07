@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
         int seconds = Mathf.RoundToInt(gameTimer);
         timerText.text = "Time: " + seconds;
 
-        scoretext.text = "Score: " + score + " | Level: " + level;
+        scoretext.text = "Score: " + score + " \nLevel: " + level;
 
         if (gameTimer <= 0)
         {
