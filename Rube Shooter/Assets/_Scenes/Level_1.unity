@@ -3136,7 +3136,7 @@ MonoBehaviour:
   currentOS: 0
   directoryDivider: 
   scoreFileName: highscores.txt
-  scoresTextElement: {fileID: 725558785}
+  scoresTextElement: {fileID: 725558788}
   scoresParentContainer: {fileID: 1384544164}
 --- !u!1 &363958610 stripped
 GameObject:
