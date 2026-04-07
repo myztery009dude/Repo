@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     private float gameTimer;
 
     private int score = 0;
+    private int level = 1;
 
     public enum GameState
     {
@@ -42,7 +43,7 @@ public class GameManager : MonoBehaviour
     };
 
     private GameState gameState;
-    public GameState State { get { return gameState;  } }
+    public GameState State { get { return gameState; } }
 
     private void Awake()
     {
@@ -55,11 +56,13 @@ public class GameManager : MonoBehaviour
 
         player.SetActive(false);
         worldCamera.gameObject.SetActive(true);
+
         for (int i = 0; i < targets.Length; i++)
         {
             targets[i].GameManager = this;
             targets[i].gameObject.SetActive(false);
         }
+
         startTimer = startTimerAmount;
         messageText.text = "Press Enter to Start";
         timerText.text = "";
@@ -72,12 +75,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
             Application.Quit();
         }
 
-        switch(gameState)
+        switch (gameState)
         {
             case GameState.Start:
                 GameStateStart();
@@ -94,8 +97,7 @@ public class GameManager : MonoBehaviour
     private void GameStateStart()
     {
         startTimer -= Time.deltaTime;
-
-        messageText.text = "Get Ready to shoot Rube " + (int)(startTimer + 1);
+        messageText.text = "Get Ready " + (int)(startTimer + 1);
 
         if (startTimer < 0)
         {
@@ -106,10 +108,6 @@ public class GameManager : MonoBehaviour
             startTimer = startTimerAmount;
             score = 0;
 
-            highScorePanel.gameObject.SetActive(false);
-            newgameButton.gameObject.SetActive(false);
-            highScoresButton.gameObject.SetActive(false);
-
             player.SetActive(true);
             worldCamera.gameObject.SetActive(false);
         }
@@ -118,30 +116,55 @@ public class GameManager : MonoBehaviour
     private void GameStatePlaying()
     {
         gameTimer -= Time.deltaTime;
+
         int seconds = Mathf.RoundToInt(gameTimer);
-        timerText.text = string.Format("Time: {0:D2}:{1:D2}",
-                              (seconds / 60), (seconds % 60));
+        timerText.text = "Time: " + seconds;
+
+        scoretext.text = "Score: " + score + " | Level: " + level;
 
         if (gameTimer <= 0)
         {
-            Cursor.lockState = CursorLockMode.Confined;
-            messageText.text = "Game Over! Score: " + score;
-            Debug.Log("Game Over Score: " + score);
-            gameState = GameState.GameOver;
-            player.SetActive(false);
-            worldCamera.gameObject.SetActive(true);
-            for (int i = 0; i < targets.Length; i++)
+            if (level == 1)
             {
-                targets[i].gameObject.SetActive(false);
+                level = 2;
+                messageText.text = "LEVEL 2!";
+
+                gameTimer = gameTimerAmount;
+                targetActivateTimerAmount = 0.5f;
+
+                for (int i = 0; i < targets.Length; i++)
+                {
+                    targets[i].gameObject.SetActive(false);
+                }
+
+                gameState = GameState.Start;
+                return;
             }
-            highScores.AddScore(score);
-            highScores.SaveScoresToFile();
-            newgameButton.gameObject.SetActive(true);
-            highScoresButton.gameObject.SetActive(true);
+            else
+            {
+                Cursor.lockState = CursorLockMode.Confined;
+                messageText.text = "Game Over! Score: " + score;
+
+                gameState = GameState.GameOver;
+                player.SetActive(false);
+                worldCamera.gameObject.SetActive(true);
+
+                for (int i = 0; i < targets.Length; i++)
+                {
+                    targets[i].gameObject.SetActive(false);
+                }
+
+                highScores.AddScore(score);
+                highScores.SaveScoresToFile();
+
+                newgameButton.gameObject.SetActive(true);
+                highScoresButton.gameObject.SetActive(true);
+            }
         }
 
         targetActivateTimer -= Time.deltaTime;
-        if(targetActivateTimer <= 0)
+
+        if (targetActivateTimer <= 0)
         {
             ActivateRandomTarget();
             targetActivateTimer = targetActivateTimerAmount;
@@ -150,8 +173,9 @@ public class GameManager : MonoBehaviour
 
     private void GameStateGameOver()
     {
-        if(Input.GetKeyUp(KeyCode.Return))
+        if (Input.GetKeyUp(KeyCode.Return))
         {
+            level = 1;
             gameState = GameState.Start;
             timerText.text = "";
             scoretext.text = "";
@@ -167,11 +191,12 @@ public class GameManager : MonoBehaviour
     public void AddScore(int points)
     {
         score += points;
-        scoretext.text = "Score: " + score;
+        scoretext.text = "Score: " + score + " | Level: " + level;
     }
 
     public void OnNewGame()
     {
+        level = 1;
         gameState = GameState.Start;
     }
 
