@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float movementSpeed = 5f;
+    public float sprintMultiplier = 2.5f;
     public float JumpHeight = 2f;
     public float fallGravityMultiplier = 2f;
     public float mouseSensitivity = 2.0f;
@@ -13,11 +15,13 @@ public class PlayerMovement : MonoBehaviour
     private float forwardInputValue;
     private float strafeInputValue;
     private bool jumpInput;
+    private bool sprintInput;
 
     private float terminalVelocity = 53f;
     private float verticalVelocity;
 
     private float rotateCameraPitch;
+    private float currentMoveSpeed;
 
     private Camera firstPersonCam;
     private CharacterController characterController;
@@ -34,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
         forwardInputValue = Input.GetAxisRaw("Vertical");
         strafeInputValue = Input.GetAxisRaw("Horizontal");
         jumpInput = Input.GetButtonDown("Jump");
+        sprintInput = Input.GetButton("Sprint");
+
         Movement();
         JumpAndGravity();
         CameraMovement();
@@ -41,7 +47,17 @@ public class PlayerMovement : MonoBehaviour
 
     void Movement()
     {
-        Vector3 direction = (transform.forward * forwardInputValue + transform.right * strafeInputValue).normalized * movementSpeed * Time.deltaTime;
+        if (sprintInput)
+        {
+            currentMoveSpeed = movementSpeed * sprintMultiplier;
+            Debug.Log("sprinting");
+        } else
+        {
+            currentMoveSpeed = movementSpeed;
+        }
+
+
+        Vector3 direction = (transform.forward * forwardInputValue + transform.right * strafeInputValue).normalized * currentMoveSpeed * Time.deltaTime;
 
         direction += Vector3.up * verticalVelocity * Time.deltaTime;
 
