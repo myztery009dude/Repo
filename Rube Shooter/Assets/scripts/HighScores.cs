@@ -1,6 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Linq.Expressions;
+using JetBrains.Annotations;
+using TMPro;
 using UnityEngine;
 
 public class HighScores : MonoBehaviour
@@ -12,6 +17,10 @@ public class HighScores : MonoBehaviour
     string currentDirectory;
 
     public string scoreFileName = "highscores.txt";
+
+    public TextMeshProUGUI scoresTextElement;
+    public GameObject scoresParentContainer;
+    private string[] scoresArray = new string[10];
 
     void Start()
     {
@@ -116,5 +125,25 @@ public class HighScores : MonoBehaviour
         }
 
         Debug.Log("score of " + newScore + " entered into high scores at position " + desiredIndex, this);
+    }
+
+    public void ToggleHighScores()
+    {
+        Debug.Log("Toggling HighScores");
+        if (!scoresParentContainer.activeSelf)
+        {
+            for (int i = 0; i < scores.Length - 1; i++) {
+                scoresArray[i] = Convert.ToString(scores[i]);
+            }
+
+            scoresTextElement.SetText(String.Join("\n", scoresArray));
+        }
+
+        scoresParentContainer.SetActive(!scoresParentContainer.activeSelf);
+    }
+
+    public void RestartGame()
+    {
+        
     }
 }

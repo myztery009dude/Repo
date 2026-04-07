@@ -3136,6 +3136,8 @@ MonoBehaviour:
   currentOS: 0
   directoryDivider: 
   scoreFileName: highscores.txt
+  scoresTextElement: {fileID: 725558785}
+  scoresParentContainer: {fileID: 1384544164}
 --- !u!1 &363958610 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 681569185253084503, guid: 94f760dbbd962c44490b035274181b6c, type: 3}
@@ -5957,7 +5959,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: High Scores
+  m_text: 'High Scores:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 34a328047cc633348a2fad02c4a50966, type: 2}
   m_sharedMaterial: {fileID: -6132120255525182666, guid: 34a328047cc633348a2fad02c4a50966, type: 2}
@@ -5991,8 +5993,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -13472,7 +13474,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1808745631}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 346298452}
+        m_TargetAssemblyTypeName: HighScores, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1808745631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15227,7 +15241,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2032285037}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 346298452}
+        m_TargetAssemblyTypeName: HighScores, Assembly-CSharp
+        m_MethodName: ToggleHighScores
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2032285037
 MonoBehaviour:
   m_ObjectHideFlags: 0
