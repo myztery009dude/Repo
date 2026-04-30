@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -27,11 +28,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Camera firstPersonCam;
     private CharacterController characterController;
+    private Animator animator;
 
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
         firstPersonCam = GetComponentInChildren<Camera>();
+        animator = GetComponent<Animator>();
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -69,7 +72,16 @@ public class PlayerMovement : MonoBehaviour
             characterController.height = 2.7f;
         }
 
-        Vector3 direction = (transform.forward * forwardInputValue + transform.right * strafeInputValue).normalized * currentMoveSpeed * Time.deltaTime;
+        if (forwardInputValue != 0 || strafeInputValue != 0)
+        {
+            animator.Play("Walk Animation", 0);
+        } else
+        {
+            animator.Play("Walk Animation", 0, 0f);
+        }
+
+
+            Vector3 direction = (transform.forward * forwardInputValue + transform.right * strafeInputValue).normalized * currentMoveSpeed * Time.deltaTime;
 
         direction += Vector3.up * verticalVelocity * Time.deltaTime;
 
