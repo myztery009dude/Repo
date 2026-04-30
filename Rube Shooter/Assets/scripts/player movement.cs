@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using UnityEditorInternal;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private float strafeInputValue;
     private bool jumpInput;
     private bool sprintInput;
+    private bool slideInput;
 
     private float terminalVelocity = 53f;
     private float verticalVelocity;
@@ -42,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         strafeInputValue = Input.GetAxisRaw("Horizontal");
         jumpInput = Input.GetButtonDown("Jump");
         sprintInput = Input.GetButton("Sprint");
+        slideInput = Input.GetButton("Slide");
 
         Movement();
         JumpAndGravity();
@@ -54,11 +57,20 @@ public class PlayerMovement : MonoBehaviour
         {
             currentMoveSpeed = movementSpeed * sprintMultiplier;
             Debug.Log("sprinting");
-        } else
-        {
-            currentMoveSpeed = movementSpeed;
         }
 
+        if (slideInput)
+        {
+            currentMoveSpeed = movementSpeed * sprintMultiplier;
+            characterController.height = 1f;
+            Debug.Log("sliding");
+        }
+
+        if (!slideInput && !sprintInput)
+        {
+            currentMoveSpeed = movementSpeed;
+            characterController.height = 2.7f;
+        }
 
         if (forwardInputValue != 0 || strafeInputValue != 0)
         {
